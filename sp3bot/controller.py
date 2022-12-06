@@ -590,6 +590,8 @@ async def crontab_job(context: ContextTypes.DEFAULT_TYPE):
         if not (now.hour % 1 == 0 and now.minute == 0):
             return
 
+    update_s3si_ts()
+
     logger.bind(cron=True).debug(f"crontab_job")
     users = get_all_user()
     for u in users:
