@@ -219,7 +219,7 @@ def post_battle_to_stat_ink_s3si_ts(**kwargs):
 		logger.bind(cron=True).debug(f'cli: {cmd}')
 		os.system(cmd)
 
-	cmd = f'/home/anyeccc/.deno/bin/deno run -Ar ./s3si.ts -n -p {path_config_file}'
+	cmd = f'/root/.deno/bin/deno run -Ar ./s3si.ts -n -p {path_config_file}'
 	logger.bind(cron=True).debug(path_config_file)
 	logger.bind(cron=True).debug(cmd)
 	rtn = subprocess.run(cmd.split(' '), stdout=subprocess.PIPE).stdout.decode('utf-8')
@@ -297,7 +297,7 @@ def exported_to_stat_ink(user_id, session_token, api_key, user_lang):
 		logger.bind(cron=True).debug(f'cli: {cmd}')
 		os.system(cmd)
 
-	cmd = f'/home/anyeccc/.deno/bin/deno run -Ar ./s3si.ts -n -p {path_config_file}'
+	cmd = f'/root/.deno/bin/deno run -Ar ./s3si.ts -n -p {path_config_file}'
 	logger.bind(cron=True).debug(cmd)
 	rtn = subprocess.run(cmd.split(' '), stdout=subprocess.PIPE).stdout.decode('utf-8')
 	logger.bind(cron=True).debug(f'{user_id} cli: {rtn}')

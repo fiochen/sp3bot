@@ -585,9 +585,9 @@ async def crontab_job(context: ContextTypes.DEFAULT_TYPE):
                 except Exception as e:
                     logger.bind(cron=True).error(f"{u.id}, post_battle_to_stat_ink: {e}, {msg}")
 
-    # run every 3 hours
+    # run every 1 hours
     if not user_id:
-        if not (now.hour % 3 == 0 and now.minute == 0):
+        if not (now.hour % 1 == 0 and now.minute == 0):
             return
 
     logger.bind(cron=True).debug(f"crontab_job")
